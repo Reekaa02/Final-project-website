@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Profile ♡</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Cute+Font&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="profile-page">
+
+  <a href="index.html" class="back-btn" title="Back">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
+  <div class="profile-container">
+    <div class="profile-card">
+
+      
+      <div class="profile-pic-wrapper">
+     <img id="profilePic" class="profile-pic" src="" alt="Profile Picture">
+
+      </div>
+
+      
+      <div class="header-row">
+        <h1>Your Profile ♡</h1>
+        <button id="editBtn" class="edit-btn" title="Edit Profile">
+          <i class="fas fa-pencil-alt"></i>
+        </button>
+      </div>
+
+      <p class="subtitle">Hi there, cutie! Here's your info~</p>
+
+      
+      <div id="viewMode" class="profile-info">
+        <p><strong>Name:</strong> <span id="displayName">Demo User</span></p>
+        <p><strong>Email:</strong> <span id="displayEmail">demo@email.com</span></p>
+        <p><strong>Age:</strong> <span id="displayAge">20</span></p>
+
+        <button class="btn logout">Log out</button>
+      
+      </div>
+
+      
+      <form id="editForm" class="profile-info edit-form" style="display: none;">
+        <div class="input-group">
+          <label for="editName">Name</label>
+          <input type="text" id="editName" value="Demo User" required />
+        </div>
+
+        <div class="input-group">
+          <label for="editEmail">Email</label>
+          <input type="email" id="editEmail" value="demo@email.com" required />
+        </div>
+
+        <div class="input-group">
+          <label for="editAge">Age</label>
+          <input type="number" id="editAge" value="20" min="18" required />
+        </div>
+
+        <div class="input-group">
+          <label for="editPicture">Change Profile Picture</label>
+          <input type="file" id="editPicture" accept="image/*" />
+          <p class="small-hint">New picture will preview below</p>
+          <img id="previewPic" class="preview-pic" style="display:none;" alt="Preview" />
+        </div>
+
+        <div class="edit-actions">
+          <button type="button" id="cancelBtn" class="btn secondary">Cancel</button>
+          <button type="submit" class="btn primary">Save Changes</button>
+        </div>
+      </form>
+
+      <script>
+document.querySelector('.btn.logout').addEventListener('click', () => {
+    if (confirm("Are you sure you want to log out? ♡")) {
+        logoutUser();
+    }
+});
+</script>
+
+    </div>
+  </div>
+
+  
+  <script>
+    const editBtn = document.getElementById('editBtn');
+    const viewMode = document.getElementById('viewMode');
+    const editForm = document.getElementById('editForm');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const profilePic = document.getElementById('profilePic');
+    const previewPic = document.getElementById('previewPic');
+    const editPictureInput = document.getElementById('editPicture');
+
+    editBtn.addEventListener('click', () => {
+      viewMode.style.display = 'none';
+      editForm.style.display = 'block';
+      editBtn.style.display = 'none'; 
+    });
+
+    cancelBtn.addEventListener('click', () => {
+      viewMode.style.display = 'block';
+      editForm.style.display = 'none';
+      editBtn.style.display = 'inline-flex';
+      previewPic.style.display = 'none';
+      editPictureInput.value = ''; 
+    });
+
+    
+    editPictureInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          previewPic.src = ev.target.result;
+          previewPic.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    editForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+     
+      document.getElementById('displayName').textContent = document.getElementById('editName').value;
+      document.getElementById('displayEmail').textContent = document.getElementById('editEmail').value;
+      document.getElementById('displayAge').textContent = document.getElementById('editAge').value;
+
+      
+      if (previewPic.src && previewPic.style.display !== 'none') {
+        profilePic.src = previewPic.src;
+      }
+
+      
+      viewMode.style.display = 'block';
+      editForm.style.display = 'none';
+      editBtn.style.display = 'inline-flex';
+      previewPic.style.display = 'none';
+      editPictureInput.value = '';
+    });
+
+  </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const logoutBtn = document.querySelector('.btn.logout');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            if (confirm("Are you sure you want to log out? ♡")) {
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('userEmail');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userAge');
+                window.location.href = 'index.html';
+            }
+        });
+    }
+});
+</script>
+
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

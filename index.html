@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Telebaddies</title>
+
+  
+ <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+ <link href="https://fonts.cdnfonts.com/css/nickainley" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<header class="top-bar">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+   <a href="index.html" class="logo-title">telebaddies</a>
+      <input type="text" placeholder="Search destinations or activities" class="search-bar">
+      <div style="display:flex; gap:20px;">
+        <div class="auth-buttons" style="display:flex; gap:16px; align-items:center;">
+ <div class="auth-buttons" style="display:flex; gap:16px; align-items:center;">
+    <a href="login.html"   class="pink-pill log-in-btn">log in</a>
+    <a href="signup.html"  class="pink-pill sign-up-btn">sign up</a>
+    <a href="profile.html" class="pink-pill profile-menu-trigger" style="display:none;">
+        Profile ♡
+    </a>
+</div>
+       <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </div>
+</header>
+
+<div id="menu" class="menu">
+  <a href="profile.html">Profile</a>
+  <a href="aboutus.html">About Us</a>
+
+  </div>
+
+ <nav class="category-nav">
+    <div class="container">
+      <a href="restaurants.html" class="nav-link">restaurants & cafes</a>
+      <a href="music.html"         class="nav-link">music & nightlife</a>
+      <a href="arts.html"          class="nav-link">arts & entertainment</a>
+      <a href="shopping.html"      class="nav-link">shopping & fashion</a>
+      <a href="weekend.html"       class="nav-link">weekend getaways</a>
+      <a href="activities.html"    class="nav-link">activities</a>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+<section class="hero" style="padding: 6rem 2rem 4rem; background: linear-gradient(135deg, #ffebee 0%, #fff0f5 100%);">
+  <div class="container text-center">
+    <h2 class="hero-title">
+      Discover places in KL & beyond ♡
+    </h2>
+    <p class="hero-subtitle">
+      Here to guide you out of your boredom~
+    </p>
+  </div>
+</section>
+
+
+<section class="team-section" style="padding: 3rem 2rem 5rem; background: linear-gradient(135deg, #ffebee 0%, #fff0f5 100%);">
+  <div class="container">
+    <h2 style="text-align:center; color:#ff69b4; font-family:'Cute Font', cursive; font-size:3.2rem; margin:0 0 3.5rem;">
+      Meet Our Telebaddies Team ♡
+    </h2>
+
+    <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; max-width: 1100px; margin: 0 auto;">
+      
+      
+      <div class="team-card" style="text-align:center;">
+        <div class="team-photo-wrapper" style="width:160px; height:160px; margin:0 auto 1.2rem; border-radius:50%; overflow:hidden; border:5px solid #ff69b4; box-shadow:0 8px 25px rgba(255,105,180,0.25);">
+          <img src="team/WhatsApp Image 2026-02-04 at 15.20.22.jpeg" alt="Rozalyn" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <h3 style="color:#ff69b4; font-size:1.5rem; margin:0.5rem 0;">Rozalyn</h3>
+        <p style="color:#e780b4; font-size:0.95rem; margin:0.3rem 0;">252DM252QH</p>
+        <p style="color:#555; font-size:1.05rem; margin-top:0.8rem;">Leader</p>
+      </div>
+
+      
+      <div class="team-card" style="text-align:center;">
+        <div class="team-photo-wrapper" style="width:160px; height:160px; margin:0 auto 1.2rem; border-radius:50%; overflow:hidden; border:5px solid #ff69b4; box-shadow:0 8px 25px rgba(255,105,180,0.25);">
+          <img src="team/WhatsApp Image 2026-02-04 at 18.09.43.jpeg" alt="Marissa" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <h3 style="color:#ff69b4; font-size:1.5rem; margin:0.5rem 0;">Marissa</h3>
+        <p style="color:#e780b4; font-size:0.95rem; margin:0.3rem 0;">252DM2540S</p>
+        <p style="color:#555; font-size:1.05rem; margin-top:0.8rem;">Designer</p>
+      </div>
+
+      
+      <div class="team-card" style="text-align:center;">
+        <div class="team-photo-wrapper" style="width:160px; height:160px; margin:0 auto 1.2rem; border-radius:50%; overflow:hidden; border:5px solid #ff69b4; box-shadow:0 8px 25px rgba(255,105,180,0.25);">
+          <img src="team/WhatsApp Image 2026-02-04 at 22.11.17.jpeg" alt="Afiqah" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <h3 style="color:#ff69b4; font-size:1.5rem; margin:0.5rem 0;">Afiqah</h3>
+        <p style="color:#e780b4; font-size:0.95rem; margin:0.3rem 0;">253DM2554D</p>
+        <p style="color:#555; font-size:1.05rem; margin-top:0.8rem;">Co-Developer</p>
+      </div>
+
+      
+      <div class="team-card" style="text-align:center;">
+        <div class="team-photo-wrapper" style="width:160px; height:160px; margin:0 auto 1.2rem; border-radius:50%; overflow:hidden; border:5px solid #ff69b4; box-shadow:0 8px 25px rgba(255,105,180,0.25);">
+          <img src="team/WhatsApp Image 2026-02-04 at 22.31.41.jpeg" alt="Amelia" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <h3 style="color:#ff69b4; font-size:1.5rem; margin:0.5rem 0;">Amelia</h3>
+        <p style="color:#e780b4; font-size:0.95rem; margin:0.3rem 0;">253DM255VY</p>
+        <p style="color:#555; font-size:1.05rem; margin-top:0.8rem;">Content research and writing </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 telebaddies. All rights reserved.<br><br>
+ <div class="social-links">
+    <a href="#">Instagram</a> • <a href="#">Facebook</a> • <a href="#">WhatsApp</a> • <a href="#">Email</a>
+  </div>
+</footer>
+
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
